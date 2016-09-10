@@ -170,6 +170,8 @@ return [
         MaxHoffmann\Parsedown\ParsedownServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        igaster\laravelTheme\themeServiceProvider::class,
+        Spatie\Newsletter\NewsletterServiceProvider::class,
 
     ],
 
@@ -233,7 +235,7 @@ return [
         'Purifier'     => Mews\Purifier\Facades\Purifier::class,
         'Markdown'     => MaxHoffmann\Parsedown\ParsedownFacade::class,
         'Omnipay'      => Omnipay\Omnipay::class,
-       // 'Omnipay'      => Omnipay\Omnipay::class,
-
+        'Theme' => igaster\laravelTheme\Facades\Theme::class,
+        'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
     ],
 ];

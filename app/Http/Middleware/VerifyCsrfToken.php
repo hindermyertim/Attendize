@@ -9,6 +9,9 @@ class VerifyCsrfToken extends BaseVerifier
 {
     protected $except = [
             'install/*',
+            'mailchimp',
+            '/mailchimp',
+            'contactus',
     ];
 
     /**

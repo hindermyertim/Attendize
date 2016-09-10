@@ -7,6 +7,17 @@ include_once('api_routes.php');
 
 /*
  * -------------------------
+ * Public Facing Site
+ * -------------------------
+ */
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/', ['uses' => 'FrontFaceController@index']);
+    Route::post('/mailchimp', ['uses' => 'FrontFaceController@postMailChimp']);
+    Route::post('/contactus', ['uses' => 'FrontFaceController@emailContactUs']);
+});
+
+/*
+ * -------------------------
  * Installer
  * -------------------------
  */
@@ -690,9 +701,10 @@ Route::group(['middleware' => ['auth', 'first.run']], function () {
     });
 });
 
-Route::get('/', function () {
-    return Redirect::route('showSelectOrganiser');
-});
+//Route::get('/', function () {
+    //return Redirect::route('showSelectOrganiser');
+ //   return Redirect::route('publicFacingPage');
+//});
 
 Route::get('/terms_and_conditions', [
     'as' => 'termsAndConditions',
