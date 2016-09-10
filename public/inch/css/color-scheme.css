@@ -1,0 +1,435 @@
+/*-- 
+AUTHOR   : SimplePixel
+URL      : http://themeforest.net/user/SimplePixel
+TEMPLATE : Inch - Creative Coming Soon Template
+VERSION  : 1.0
+
+TABLE OF CONTENTS
+1.0 BASIC STYLE
+2.0 PRELOADER
+3.0 FORMS
+	3.1 FORMS WHEN FOCUS
+4.0 BUTTONS & LINKS STYLE
+5.0 BASIC SECTION STYLE
+6.0 MENU
+	6.1 MENU HOVER
+	6.2 COUNTDOWN
+7.0 HOME SECTION
+	7.1 SOCIAL MEDIA LINKS
+8.0 ABOUT SECTION
+	8.1 SERVICE CONTAINER HOVER
+9.0 SUBSCRIBE SECTION
+10.0 events SECTION
+	10.1 OVERRIDE MAGNIFIC POPUP STYLE
+11.0 CONTACT SECTION
+	11.1 LOCATE US HOVER EFFECT
+12.0 GOOGLE MAP SECTION
+13.0 STYLE FOR MEDIUM DEVICES 
+14.0 STYLE FOR SMALL DEVICES 
+15.0 events STYLE ON EXTRA SMALL DEVICES
+--*/
+
+
+/*-- ========================================= --
+	1.0 BASIC STYLE
+/*-- ========================================= --*/
+p{
+	color:#d1d1d1;
+}
+.highlight{
+	color:#b30000;
+}
+
+/*-- ========================================= --
+	2.0 PRELOADER
+/*-- ========================================= --*/
+.preloader{
+	background:#262626;
+}
+.preloader .line-scale-pulse-out-rapid > div{
+	border:2px solid white;
+}
+
+
+/*-- ========================================= --
+	3.0 FORMS
+/*-- ========================================= --*/
+::-webkit-input-placeholder{
+	color: rgba(255,255,255,0.5);
+}
+:-moz-placeholder{
+	color: rgba(255,255,255,0.5);
+}
+::-moz-placeholder{
+	color: rgba(255,255,255,0.5);
+}
+:-ms-input-placeholder{
+	color: rgba(255,255,255,0.5);
+}
+input[type="text"],
+input[type="email"],
+textarea
+{
+	color:white;
+	border-bottom:1px solid white;
+}
+.input-container .thin-line,
+.form-row .thin-line
+{
+	background:#b30000;
+}
+.subscribe-form-container .email-icon::before,
+.contact-form-container .user-icon::before,
+.contact-form-container .email-icon::before,
+.contact-form-container .note-icon::before
+{
+	color:rgba(255,255,255,0.5);
+}
+label.loading-subscribe,
+label.loading-contact
+{
+	color:white;
+}
+
+/*-- =================== 3.1 FORMS WHEN FOCUS ====================== --*/
+.subscribe-email:focus ~ .email-icon::before,
+.contact-form input:focus ~ .user-icon::before,
+.contact-form input:focus ~ .email-icon::before,
+.contact-form textarea:focus ~ .note-icon::before
+{
+	color:#b30000;
+}
+
+/*-- ========================================= --
+	4.0 BUTTONS & LINKS STYLE
+/*-- ========================================= --*/
+.button-regular{
+	background:#b30000;
+	color:white;
+}
+.button-regular::before{
+	background:white;
+}
+.button-regular::after{
+	color:#b30000;
+}
+
+/*-- ========================================= --
+	5.0 BASIC SECTION STYLE
+/*-- ========================================= --*/
+section .section-title{
+	color:white;
+}
+section .section-title::before{
+	background:black;
+}
+section .section-title::after{
+	background:#b30000;
+}
+
+/*-- ========================================= --
+	6.0 MENU
+/*-- ========================================= --*/
+.menu-container{
+	border-bottom:1px solid rgba(255,255,255,0.2);
+}
+.menu a{
+	color:rgba(255,255,255,1);
+}
+.menu a::after{
+	color:#b30000;
+}
+.menu a::before{
+	background:#b30000;
+}
+
+/*-- =================== 6.1 MENU HOVER ====================== --*/
+.menu a:hover,
+.menu a.active
+{
+	color:#b30000;
+}
+
+/*-- =================== 6.2 COUNTDOWN ==================== --*/
+.countdown-container .countdown-title,
+.countdown .digit
+{
+	color:white;
+}
+.countdown::before{
+	background:#b30000;
+}
+.countdown::after{
+	background:black;
+}
+
+/*-- ========================================= --
+	7.0 HOME SECTION
+/*-- ========================================= --*/
+.home-section h1,
+.home-section h3
+{
+	color:white;
+}
+
+/*-- ===================== 7.1 SOCIAL MEDIA LINKS ======================= --*/
+.social-media-container a,
+.social-media-container-bottom a
+{
+	color:white;
+}
+.social-media-container a::before,
+.social-media-container-bottom a::before
+{
+	background:rgba(2,195,154,0);
+	border:1px solid white;
+}
+.social-media-container a:hover::before,
+.social-media-container-bottom a:hover::before
+{
+	background:#b30000;
+}
+
+/*-- ========================================= --
+	8.0 ABOUT SECTION
+/*-- ========================================= --*/
+.about-section .benefit li,
+.service .text-container h4 span
+{
+	color:white;
+}
+.about-section .benefit li i,
+.service .text-container h4 span::before
+{
+	color:#b30000;
+}
+.service .icon-container{
+	border:1px solid rgba(255,255,255,0.5);
+}
+.service .icon-container i{
+	color:rgba(255,255,255,0.5);
+}
+.service .icon-container::before{
+	background:rgba(2,195,154,0.6);
+}
+.service .icon-container::after{
+	background:rgba(2,195,154,0.9);
+}
+.service-container .owl-controls .owl-page span,
+.events-container .owl-controls .owl-page span,
+.service-container .owl-controls .owl-page.active span,
+.service-container .owl-controls.clickable .owl-page:hover span,
+.events-container .owl-controls .owl-page.active span,
+.events-container .owl-controls.clickable .owl-page:hover span
+{
+	background: white;
+}
+
+
+/*-- ===================== 8.1 SERVICE CONTAINER HOVER ====================== --*/
+.service-container:hover .service .text-container h4 span{
+	color:rgba(255,255,255,0.4);
+}
+.service-container:hover .service .icon-container i{
+	color:rgba(255,255,255,1);
+}
+.service-container:hover .service .icon-container{
+	border:1px solid rgba(255,255,255,0);
+}
+
+/*-- ========================================= --
+	9.0 SUBSCRIBE SECTION
+/*-- ========================================= --*/
+.twitter-feed,
+.feed p.date,
+.feed .user-container .name-container p.name,
+.feed .user-container .twitter-logo,
+.feed p.tweet a
+{
+	color:white;
+}
+.twitter-feed .feed p.tweet{
+	color:#d1d1d1;
+}
+.feed .user-container .name-container p.username a{
+	color:#b30000;
+}
+.feed .user-container .twitter-logo::before{
+	background:rgba(2,195,154,0.6);
+}
+.feed .user-container .twitter-logo::after{
+	background:rgba(2,195,154,0.9);
+}
+
+
+/*-- ========================================= --
+	10.0 events SECTION
+/*-- ========================================= --*/
+.events-container .events{
+	border:1px solid rgba(255,255,255,0.5);
+}
+.events .text-container span.date{
+	color:#d1d1d1;
+}
+.events .text-container span.title{
+	color:#b30000;
+}
+.events .text-container a.link-button,
+.events .text-container a.zoom-button
+{
+	color:white;
+}
+.events .text-container a.link-button::before,
+.events .text-container a.zoom-button::before
+{
+	background:rgba(255,255,255,0.1);
+}
+.events .text-container a.link-button:hover::before,
+.events .text-container a.zoom-button:hover::before
+{
+	background:#b30000;
+}
+.events .photo-container::before{
+	background:rgba(0,0,0,0.5);
+}
+.events .photo-container::after{
+	background:rgba(219, 0, 0, 0.5);
+}
+
+
+/*-- ============================ 10.1 OVERRIDE MAGNIFIC POPUP STYLE ========================= --*/
+.mfp-close,
+.mfp-close-btn-in .mfp-close
+{
+	color: white;
+}
+button.mfp-close{
+	background:#b30000;
+}
+
+
+/*-- ========================================= --
+	11.0 CONTACT SECTION
+/*-- ========================================= --*/
+.contact-section .contact-details .icon-container{
+	color:#b30000;
+	border:1px solid rgba(255,255,255,0.5);
+}
+.contact-section .contact-details .text-container{
+	background:rgba(255,255,255,0.1);
+	border:1px solid rgba(255,255,255,0.1);
+}
+.contact-section .contact-details .text-container p{
+	color:#d1d1d1;
+}
+.contact-section .contact-details a.locate-us p{
+	color:white;
+}
+.contact-details a.locate-us .icon-container::before{
+	background:rgba(2,195,154,0.6);
+}
+.contact-details a.locate-us .icon-container::after{
+	background:rgba(2,195,154,0.9);
+}
+
+/*-- ========================= 11.1 LOCATE US HOVER EFFECT ============================ --*/
+.contact-details a.locate-us:hover .icon-container{
+	color:white;
+	border:1px solid rgba(255,255,255,1);
+}
+
+/*-- ========================================= --
+	12.0 GOOGLE MAP SECTION
+/*-- ========================================= --*/
+.marker-info-title{
+	color:#b30000;
+}
+.marker-info-desc{
+	color:#262626;
+}
+.map-close-button{
+	color:white;
+}
+.map-close-button::before{
+	background:rgba(2,195,154,0.6);
+}
+.map-close-button::after{
+	background:rgba(2,195,154,0.9);
+}
+
+
+/*-- ===================================================== --*
+	13.0 STYLE FOR MEDIUM DEVICES 
+/*-- ===================================================== --*/
+@media all and (max-width: 1100px){
+	.events .text-container span.date,
+	.events .text-container span.title
+	{
+		color:white;
+	}
+	.events .photo-container::before{
+		background:rgba(2,195,154,0.65);
+	}
+	.events .text-container a.link-button::before,
+	.events .text-container a.zoom-button::before,
+	.events .text-container a.link-button:hover::before,
+	.events .text-container a.zoom-button:hover::before
+	{
+		background:rgba(255,255,255,0.2);
+	}
+	
+}
+
+/*-- ===================================================== --*
+	14.0 STYLE FOR SMALL DEVICES 
+/*-- ===================================================== --*/
+@media all and (max-width: 1023px){
+	.menu a:hover,
+	.menu a.active
+	{
+		color:#b30000;
+	}
+	.menu-container .menu-wrapper{
+		background:#262626;
+	}
+	
+	.events .text-container span.date{
+		color:#d1d1d1;
+	}
+	.events .text-container span.title{
+		color:#b30000;
+	}
+	.events .text-container a.link-button,
+	.events .text-container a.zoom-button
+	{
+		color:white;
+	}
+	.events-container .events{
+		border:1px solid rgba(255,255,255,0.5);
+	}
+	.events .photo-container::before{
+		background:rgba(0,0,0,0.5);
+	}
+	.events .photo-container::after{
+		background:rgba(219, 0, 0, 0.5);
+	}
+	.events .text-container a.link-button::before,
+	.events .text-container a.zoom-button::before
+	{
+		background:rgba(255,255,255,0.1);
+	}
+	.events .text-container a.link-button:hover::before,
+	.events .text-container a.zoom-button:hover::before
+	{
+		background:rgba(219, 0, 0, 0.5);
+	}
+}
+
+/*-- ===================================================== --*
+	15.0 events STYLE ON EXTRA SMALL DEVICES
+/*-- ===================================================== --*/
+@media all and (max-width: 483px){
+	.events-container .events{
+		border:1px solid rgba(255,255,255,0.5);
+	}
+}
