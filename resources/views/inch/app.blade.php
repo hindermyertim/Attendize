@@ -104,7 +104,7 @@
         <!-- 6.2.2 countdown container -->
 
         <div class="countdown-container col-lg-4 col-md-6 col-sm-12 col-xs-12 entrance animated">
-            <a href="https://www.facebook.com/events/148747435563303/" class="link-button" target="_blank">
+            <a href="https://www.facebook.com/events/323369024679179/" class="link-button" target="_blank">
                 <p class="countdown-title">days till next event</p>
                 <!-- countdown -->
                 <div class="countdown" id="lwt-countdown">

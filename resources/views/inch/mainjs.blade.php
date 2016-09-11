@@ -1,32 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function() {
-        // newsletter
-        /*$("#mailChimpSubmit").click(function(e){
-         e.preventDefault();
-         $.ajax({type: "POST",
-         dataType: "json",
-         url: "/mailchimp",
-         data: { EMAIL: $("#email_subscribe").val() },
-         success:function(result){
-         console.log(result);
-         if(result.errors === false)
-         {
-         //  $('#subscribeResult').text('Your email has been submitted. Please confirm the newsletter ' +
-         //     'subscription by clicking the link sent to you in your email. See you on the floor ;]');
-
-         }
-         else {
-
-         //  $('#subscribeResult').text('Submission fail\'d, are you already signed up maybe?');
-
-         }
-         },
-         error: function (textStatus, errorThrown) {
-         // $('#subscribeResult').text('Submission fail\'d, are you already signed up maybe?');
-         }
-         });
-         });
-         */
         // contact us email
         $("#contactUsSubmit").click(function(e) {
             e.preventDefault();
@@ -109,7 +82,7 @@
          * 6. YouTube video background
          * 7. Self hosted video background
          */
-        $.launch_date = [2, 9, 2016, 21, 0, 0]; //-- launch date [d,m,yyyy], for example 1 August 2015 : [1,8,2015]
+        $.launch_date = [18, 9, 2016, 13, 0, 0]; //-- launch date [d,m,yyyy], for example 1 August 2015 : [1,8,2015]
         //$.bg_urls = ["http://placehold.it/2560x1600"];
         $.bg_urls = ["{{ Theme::url('img/blackbglogo1.png' )}}"];
         $.youtube_url = ""; //-- just the last words after https://www.youtube.com/watch?v=

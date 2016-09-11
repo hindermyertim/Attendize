@@ -181,6 +181,7 @@
             <!-- 6.6.1 events container -->
             <div class="events-container col-lg-12 col-md-12 col-xs-12 owl-carousel">
 
+                {{--
                 <div class="events">
                     <!-- photo container -->
                     <div class="photo-container">
@@ -195,6 +196,27 @@
 
                         <!-- link button -->
                         <a href="https://www.facebook.com/events/148747435563303/" class="link-button" target="_blank"><i class="pe-7s-link"></i></a>
+                        <!-- end link button -->
+                    </div>
+                    <!-- end text container -->
+                </div>
+                <!-- end events 3 -->
+                --}}
+
+                <div class="events">
+                    <!-- photo container -->
+                    <div class="photo-container">
+                        <img src="{{ Theme::url('img/parkparty.jpg') }}" alt="events" />
+                    </div>
+                    <!-- end photo container -->
+
+                    <!-- text container -->
+                    <div class="text-container">
+                        <span class="date">09 / 18 / 2016</span>
+                        <h4><span class="title" style="color: white;">LEFT RITE Park Party</span></h4>
+
+                        <!-- link button -->
+                        <a href="https://www.facebook.com/events/323369024679179/" class="link-button" target="_blank"><i class="pe-7s-link"></i></a>
                         <!-- end link button -->
                     </div>
                     <!-- end text container -->
