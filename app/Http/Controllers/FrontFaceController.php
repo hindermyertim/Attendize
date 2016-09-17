@@ -45,7 +45,9 @@ class FrontFaceController extends Controller
         //dd(date('d', $events->first()->start_date));
         //\Log::debug('$latestEvent');
         //\Log::debug(print_r($events, true));
-        return view(\Theme::get().'/index' )->with('events', $events);
+        $convertedTime =  $events->first()->start_date;
+        $convertedTime->setTimezone('UTC');
+        return view(\Theme::get().'/index' )->with('events', $events)->with('convertedTime', $convertedTime);
     }
 
     public function postMailChimp(Request $request)

@@ -83,9 +83,9 @@
          * 7. Self hosted video background
          */
         @if(count($events) > 0)
-        $.launch_date = [{{$events->first()->start_date->day}}, {{$events->first()->start_date->month}},
-                         {{$events->first()->start_date->year}}, {{$events->first()->start_date->hour}},
-                         {{$events->first()->start_date->minute}}, {{$events->first()->start_date->second}}]; //-- launch date [d,m,yyyy], for example 1 August 2015 : [1,8,2015]
+        $.launch_date = [{{$convertedTime->day}}, {{$convertedTime->month}},
+                         {{$convertedTime->year}}, {{$convertedTime->hour}},
+                         {{$convertedTime->minute}}, {{$convertedTime->second}}]; //-- launch date [d,m,yyyy], for example 1 August 2015 : [1,8,2015]
         @endif
         //$.bg_urls = ["http://placehold.it/2560x1600"];
         $.bg_urls = ["{{ Theme::url('img/blackbglogo1.png' )}}"];
