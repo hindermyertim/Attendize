@@ -170,6 +170,13 @@
                 </div>
             </div>
         </div>
+        <div class="form-group">
+            {!! Form::label('facebook_event_url', 'Facebook Event Url', array('class'=>'control-label')) !!}
+            {!!  Form::text('facebook_event_url', $event->facebook_event_url, [
+                                        'class'=>'form-control',
+                                        'placeholder'=>'E.g: https://www.facebook.com/events/000000000000000'
+                        ])  !!}
+        </div>
     </div>
 
     <div class="col-md-12">

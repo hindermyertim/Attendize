@@ -82,7 +82,11 @@
          * 6. YouTube video background
          * 7. Self hosted video background
          */
-        $.launch_date = [18, 9, 2016, 13, 0, 0]; //-- launch date [d,m,yyyy], for example 1 August 2015 : [1,8,2015]
+        @if(count($events) > 0)
+        $.launch_date = [{{$events->first()->start_date->day}}, {{$events->first()->start_date->month}},
+                         {{$events->first()->start_date->year}}, {{$events->first()->start_date->hour}},
+                         {{$events->first()->start_date->minute}}, {{$events->first()->start_date->second}}]; //-- launch date [d,m,yyyy], for example 1 August 2015 : [1,8,2015]
+        @endif
         //$.bg_urls = ["http://placehold.it/2560x1600"];
         $.bg_urls = ["{{ Theme::url('img/blackbglogo1.png' )}}"];
         $.youtube_url = ""; //-- just the last words after https://www.youtube.com/watch?v=

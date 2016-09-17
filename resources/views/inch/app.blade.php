@@ -103,8 +103,9 @@
 
         <!-- 6.2.2 countdown container -->
 
+        @if(count($events) > 0)
         <div class="countdown-container col-lg-4 col-md-6 col-sm-12 col-xs-12 entrance animated">
-            <a href="https://www.facebook.com/events/323369024679179/" class="link-button" target="_blank">
+            <a href="{{$events->first()->facebook_event_url}}" class="link-button" target="_blank">
                 <p class="countdown-title">days till next event</p>
                 <!-- countdown -->
                 <div class="countdown" id="lwt-countdown">
@@ -116,6 +117,7 @@
 
             <!-- end countdown -->
         </div>
+        @endif
 
         <!-- end countdown container -->
 

@@ -152,6 +152,15 @@
                             </a>
                         </span>
 
+                        <div class="form-group">
+                            {!! Form::label('facebook_event_url', 'Facebook Event Url', array('class'=>'control-label')) !!}
+                            {!! Form::text('facebook_event_url', Input::old('facebook_event_url'),
+                                        array(
+                                        'class'=>'form-control',
+                                        'placeholder'=>'E.g: https://www.facebook.com/events/000000000000000'
+                            ))  !!}
+                        </div>
+
                         @if($organiser_id)
                             {!! Form::hidden('organiser_id', $organiser_id) !!}
                         @else

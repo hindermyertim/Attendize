@@ -25,6 +25,7 @@ class Event extends MyBaseModel
         'end_date'            => ['required'],
         'organiser_name'      => ['required_without:organiser_id'],
         'event_image'         => ['mimes:jpeg,jpg,png', 'max:3000'],
+        'facebook_event_url'  => ['url'],
     ];
 
     /**
@@ -330,5 +331,15 @@ class Event extends MyBaseModel
     public function getDates()
     {
         return ['created_at', 'updated_at', 'start_date', 'end_date'];
+    }
+
+    public function scopeIsLive($query)
+    {
+        return $query->where('is_live', '=', 1);
+    }
+
+    public function scopeDefaultOrganizer($query)
+    {
+        return $query->where('organiser_id', '=', 1);
     }
 }

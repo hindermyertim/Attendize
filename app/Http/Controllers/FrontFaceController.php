@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 use Newsletter;
 use App\Http\Controllers\Input;
 use Mail;
+use App\Models\Event;
+use Carbon\Carbon;
+use Log;
 
 
 class FrontFaceController extends Controller
@@ -32,7 +35,17 @@ class FrontFaceController extends Controller
      */
     public function index()
     {
-        return view(\Theme::get().'/index');
+
+        $currentTime = Carbon::now();
+        $events = Event::where('start_date', '>', $currentTime)
+            ->defaultOrganizer()
+            ->isLive()
+            ->orderBy('start_date', 'desc')
+            ->get();
+        //dd(date('d', $events->first()->start_date));
+        //\Log::debug('$latestEvent');
+        //\Log::debug(print_r($events, true));
+        return view(\Theme::get().'/index' )->with('events', $events);
     }
 
     public function postMailChimp(Request $request)

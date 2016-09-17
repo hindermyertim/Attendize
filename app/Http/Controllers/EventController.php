@@ -94,6 +94,7 @@ class EventController extends MyBaseController
         $event->bg_type = 'image';
         $event->bg_image_path = config('attendize.event_default_bg_image');
 
+        $event->facebook_event_url = $request->get('facebook_event_url');
 
         if ($request->get('organiser_name')) {
             $organiser = Organiser::createNew(false, false, true);
@@ -115,6 +116,8 @@ class EventController extends MyBaseController
                 ]);
             }
 
+
+            $event->organiser_name = $request->get('organiser_name');
             $organiser->name = $request->get('organiser_name');
             $organiser->about = $request->get('organiser_about');
             $organiser->email = $request->get('organiser_email');
@@ -274,6 +277,8 @@ class EventController extends MyBaseController
         if ($request->get('remove_current_image') == '1') {
             EventImage::where('event_id', '=', $event->id)->delete();
         }
+
+        $event->facebook_event_url = $request->get('facebook_event_url');
 
         $event->save();
 
