@@ -46,11 +46,11 @@ class FrontFaceController extends Controller
         if(count($events)) {
             $convertedTime = $events->first()->start_date;
             $convertedTime->setTimezone('UTC');
-            return view(\Theme::get().'/index' )->with('events', $events)->with('convertedTime', $convertedTime);
         }
         else {
-            return view(\Theme::get().'/index' );
+            $convertedTime = null;
         }
+        return view(\Theme::get().'/index' )->with('events', $events)->with('convertedTime', $convertedTime);
 
     }
 
