@@ -180,27 +180,31 @@
         <div class="right-side col-lg-6 col-md-6 col-xs-12 centering-y">
             <!-- 6.6.1 events container -->
             <div class="events-container col-lg-12 col-md-12 col-xs-12 owl-carousel">
-                @foreach($events as $event)
-                    <div class="events">
-                        <!-- photo container -->
-                        <div class="photo-container">
-                            <img alt="{{$event->title}}" src="{{config('attendize.cdn_url_user_assets').'/'.$event->images->first()['image_path']}}" property="image">
-                        </div>
-                        <!-- end photo container -->
 
-                        <!-- text container -->
-                        <div class="text-container">
-                            <span class="date">{{ $event->start_date->format('D d M h:i A') }}</span>
-                            <h4><span class="title" style="color: white;">{{ $event->title }}</span></h4>
+                @if(count($events) > 0)
+                    @foreach($events as $event)
+                        <div class="events">
+                            <!-- photo container -->
+                            <div class="photo-container">
+                                <img alt="{{$event->title}}" src="{{config('attendize.cdn_url_user_assets').'/'.$event->images->first()['image_path']}}" property="image">
+                            </div>
+                            <!-- end photo container -->
 
-                            <!-- link button -->
-                            <a href="{{ $event->facebook_event_url }}" class="link-button" target="_blank"><i class="pe-7s-link"></i></a>
-                            <!-- end link button -->
+                            <!-- text container -->
+                            <div class="text-container">
+                                <span class="date">{{ $event->start_date->format('D d M h:i A') }}</span>
+                                <h4><span class="title" style="color: white;">{{ $event->title }}</span></h4>
+
+                                <!-- link button -->
+                                <a href="{{ $event->facebook_event_url }}" class="link-button" target="_blank"><i class="pe-7s-link"></i></a>
+                                <!-- end link button -->
+                            </div>
+                            <!-- end text container -->
                         </div>
-                        <!-- end text container -->
-                    </div>
-                    <!-- end events 3 -->
-                @endforeach
+                        <!-- end events 3 -->
+                    @endforeach
+                @endif
+
             </div>
 
             <!-- end events container -->

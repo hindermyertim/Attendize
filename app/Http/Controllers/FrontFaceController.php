@@ -42,12 +42,16 @@ class FrontFaceController extends Controller
             ->isLive()
             ->orderBy('start_date', 'desc')
             ->get();
-        //dd(date('d', $events->first()->start_date));
-        //\Log::debug('$latestEvent');
-        //\Log::debug(print_r($events, true));
-        $convertedTime =  $events->first()->start_date;
-        $convertedTime->setTimezone('UTC');
-        return view(\Theme::get().'/index' )->with('events', $events)->with('convertedTime', $convertedTime);
+
+        if(isset($events)) {
+            $convertedTime = $events->first()->start_date;
+            $convertedTime->setTimezone('UTC');
+            return view(\Theme::get().'/index' )->with('events', $events)->with('convertedTime', $convertedTime);
+        }
+        else {
+            return view(\Theme::get().'/index' );
+        }
+
     }
 
     public function postMailChimp(Request $request)
