@@ -342,4 +342,32 @@ class Event extends MyBaseModel
     {
         return $query->where('organiser_id', '=', 1);
     }
+
+    public function getIcsForEvent()
+    {
+        $siteUrl = URL::to('/');
+        $eventUrl = $this->getEventUrlAttribute();
+
+        $start_date = new Carbon($this->start_date);
+        $end_date = new Carbon($this->end_date);
+        $timestamp = new Carbon();
+
+        $icsTemplate = <<<ICSTemplate
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:{$siteUrl}
+BEGIN:VEVENT
+UID:{$eventUrl}
+DTSTAMP:{$timestamp->format('Ymd\THis\Z')}
+DTSTART:{$start_date->format('Ymd\THis\Z')}
+DTEND:{$end_date->format('Ymd\THis\Z')}
+SUMMARY:$this->title
+LOCATION:{$this->venue_name}
+DESCRIPTION:{$this->description}
+END:VEVENT
+END:VCALENDAR
+ICSTemplate;
+
+        return $icsTemplate;
+    }
 }

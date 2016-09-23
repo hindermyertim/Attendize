@@ -127,6 +127,11 @@ Route::group(['prefix' => 'e'], function () {
         'uses' => 'EventViewEmbeddedController@showEmbeddedEvent',
     ]);
 
+    Route::get('/{event_id}/calendar.ics', [
+        'as'   => 'downloadCalendarIcs',
+        'uses' => 'EventViewController@showCalendarIcs',
+    ]);
+
     Route::get('/{event_id}/{event_slug?}', [
         'as'   => 'showEventPage',
         'uses' => 'EventViewController@showEventHome',
