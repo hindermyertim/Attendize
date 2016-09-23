@@ -43,6 +43,9 @@ class FrontFaceController extends Controller
             ->orderBy('start_date', 'desc')
             ->get();
 
+        Log::debug('$events');
+        Log::debug(print_r($events,true));
+
         if(isset($events)) {
             $convertedTime = $events->first()->start_date;
             $convertedTime->setTimezone('UTC');
