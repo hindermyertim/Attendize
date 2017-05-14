@@ -1110,7 +1110,7 @@ nav.menu{
 .events-container .owl-controls .owl-page.active span,
 .events-container .owl-controls.clickable .owl-page:hover span
 {
-	opacity: 1;
+	/*opacity: 1;*/
 }
 .service-container .owl-controls,
 .events-container .owl-controls
@@ -1277,8 +1277,8 @@ nav.menu{
 	content:'';
 	position:absolute;
 	display:block;
-	width:150%;
-	height:150%;
+	width:100%;
+	height:100%;
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -1295,8 +1295,8 @@ nav.menu{
 	left:128.1%;
 }
 .events .photo-container img{
-	height:120%;
-	width:120%;
+	height:100%;
+	width:100%;
 	position:absolute;
 	display:inline-block;
 	top:50%;
@@ -1384,16 +1384,16 @@ nav.menu{
 
 /*-- ============================ 14.1 events ON HOVER EFFECT ============================== --*/
 .events-container:hover .events .photo-container img{
-	width:100%;
-	height:100%;
+	/*width:100%;
+	height:100%;*/
 } 
 .events-container:hover .events .photo-container::before{
-	top:-78%;
-	left:-78%;
+	/*top:-78%;
+	left:-78%;*/
 }
 .events-container:hover .events .photo-container::after{
-	top:28%;
-	left:28%;
+	/*top:28%;
+	left:28%;*/
 }
 .events .text-container a.link-button:hover,
 .events .text-container a.zoom-button:hover
@@ -1642,8 +1642,8 @@ nav.menu{
 		content:'';
 		position:absolute;
 		display:block;
-		width:110%;
-		height:110%;
+		width:100%;
+		height:100%;
 		top:0%;
 		left:0%;
 		-webkit-transform: rotate(0deg);
@@ -1666,8 +1666,8 @@ nav.menu{
 		width:242px;
 	}
 	.events-container:hover .events .photo-container::before{
-		top:0%;
-		left:0%;
+		/*top:0%;
+		left:0%;*/
 	}
 }
 
@@ -2003,21 +2003,21 @@ nav.menu{
 		transform: rotate(-45deg);
 	}
 	.events-container:hover .events .photo-container::before{
-		top:-78%;
-		left:-78%;
+		/*top:-78%;
+		left:-78%;*/
 	}
 	.events-container:hover .events .photo-container::after{
-		top:28%;
-		left:28%;
+		/*top:28%;
+		left:28%;*/
 	}
 	.events .text-container a.link-button:hover,
 	.events .text-container a.zoom-button:hover
 	{
-		-webkit-transform: scale(1.2,1.2);
+		/*-webkit-transform: scale(1.2,1.2);
 		-moz-transform: scale(1.2,1.2);
 		-ms-transform: scale(1.2,1.2);
 		-o-transform: scale(1.2,1.2);
-		transform: scale(1.2,1.2);
+		transform: scale(1.2,1.2);*/
 	}
 	.events-container .owl-controls{
 		margin-top:30px;
