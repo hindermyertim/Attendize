@@ -251,6 +251,75 @@ Route::group(['middleware' => ['auth', 'first.run']], function () {
             'uses' => 'OrganiserEventsController@showEvents',
         ]);
 
+        // Ledger Stuff
+        Route::get('{organiser_id}/ledger/sheet/management', [
+            'as'   => 'manageBalanceSheets',
+            'uses' => 'BalanceAccountingController@manageBalanceSheets',
+        ]);
+
+        Route::get('{organiser_id}/ledger/sheet/create', [
+            'as'   => 'showCreateBalanceSheet',
+            'uses' => 'BalanceAccountingController@showCreateBalanceSheet',
+        ]);
+
+        Route::post('{organiser_id}/ledger/sheet/create', [
+            'as'   => 'postCreateBalanceSheet',
+            'uses' => 'BalanceAccountingController@postCreateBalanceSheet',
+        ]);
+
+        Route::get('{organiser_id}/ledger/sheet/{sheetId}/account/create', [
+            'as'   => 'showCreateBalanceAccount',
+            'uses' => 'BalanceAccountingController@showCreateBalanceAccount',
+        ]);
+
+        Route::post('{organiser_id}/ledger/sheet/{sheetId}/account/create', [
+            'as'   => 'postCreateBalanceAccount',
+            'uses' => 'BalanceAccountingController@postCreateBalanceAccount',
+        ]);
+
+        Route::get('{organiser_id}/ledger/sheet/{sheetId}/create', [
+            'as'   => 'showCreateBalanceTransaction',
+            'uses' => 'BalanceAccountingController@showCreateBalanceTransaction',
+        ]);
+
+        Route::post('{organiser_id}/ledger/sheet/{sheetId}/create', [
+            'as'   => 'postCreateBalanceTransaction',
+            'uses' => 'BalanceAccountingController@postCreateBalanceTransaction',
+        ]);
+
+        Route::get('{organiser_id}/ledger/sheet/{sheetId}/edit', [
+            'as'   => 'showEditBalanceSheet',
+            'uses' => 'BalanceAccountingController@showEditBalanceSheet',
+        ]);
+
+        Route::post('{organiser_id}/ledger/sheet/{sheetId}/edit', [
+            'as'   => 'postEditBalanceSheet',
+            'uses' => 'BalanceAccountingController@postEditBalanceSheet',
+        ]);
+
+        Route::get('{organiser_id}/ledger/sheet/{activeSheetId?}', [
+            'as'   => 'showFullTransactions',
+            'uses' => 'BalanceAccountingController@showFullTransactions',
+            function ($activeSheetId = null) {
+        }]);
+
+        Route::get('{organiser_id}/ledger/sheet/{sheetId}/manageaccount/', [
+            'as'   => 'showBalanceAccounts',
+            'uses' => 'BalanceAccountingController@showBalanceAccounts',
+        ]);
+
+        Route::get('{organiser_id}/ledger/sheet/{sheetId}/account/{accountId}/edit', [
+            'as'   => 'showEditBalanceAccount',
+            'uses' => 'BalanceAccountingController@showEditBalanceAccount',
+        ]);
+
+        Route::post('{organiser_id}/ledger/sheet/{sheetId}/account/{accountId}/edit', [
+            'as'   => 'postEditBalanceAccount',
+            'uses' => 'BalanceAccountingController@postEditBalanceAccount',
+        ]);
+
+
+
         Route::get('{organiser_id}/customize', [
             'as'   => 'showOrganiserCustomize',
             'uses' => 'OrganiserCustomizeController@showCustomize',
@@ -273,6 +342,7 @@ Route::group(['middleware' => ['auth', 'first.run']], function () {
             'as'   => 'postEditOrganiserPageDesign',
             'uses' => 'OrganiserCustomizeController@postEditOrganiserPageDesign'
         ]);
+
     });
 
     /*
@@ -718,3 +788,103 @@ Route::get('/terms_and_conditions', [
     }
 ]);
 
+// BalanceAccounts
+
+/*
+Route::group(['prefix' => 'organiser'], function () {
+
+    Route::get('{organiser_id}/dashboard', [
+        'as'   => 'showOrganiserDashboard',
+        'uses' => 'OrganiserDashboardController@showDashboard',
+    ]);
+    */
+
+/*
+Route::group([
+    //'as'=>'Ledger::',
+    'prefix'=>'organiser/ledger/',
+], function($accounts) use ($router){ // implicit binding for account
+
+    // bind account to \Wzulfikar\EloquentSimpleLedger\Account
+    $router->model('accounts', \App\Models\BalanceAccount::class);
+
+    Route::get('', function($accounts){
+        //$stats = \App\Models\LedgerHelper::accountStats($accounts);
+
+        //if(Request::ajax()){
+        //    return $stats;
+        //}
+
+        view()->addLocation(__DIR__ . '/views');
+        $organiser = \App\Models\Organiser::where(1); // super jankey, need a better way to pass this at some point if we want to have more orgs
+        //$router->model('organiser', \App\Models\Organiser::class);
+        //return view('BalanceAccounting.index', compact('accounts', 'stats', 'organiser'));
+        return view('BalanceAccounting.index', compact('accounts', 'stats', 'organiser'));
+    });
+
+    Route::post('', function($account){
+        $transaction = \App\Models\LedgerHelper::record(Request::all(), $account);
+
+        if(isset($transaction['error']))
+            return $transaction;
+
+        return \App\Models\LedgerHelper::accountStats($account);
+    });
+
+    Route::get('summary', function($account){
+        return \App\Models\LedgerHelper::summary($account);
+    });
+
+    Route::get('transactions', function($accounts){
+        return \App\Models\LedgerHelper::transactions($accounts);
+    });
+
+    Route::get('accountStats', function($account){
+        return \App\Models\LedgerHelper::accountStats($account);
+    });
+});
+
+Route::group([
+    //'as'=>'Ledger::',
+    'prefix'=>'/ledger/{account}',
+], function($account) use ($router){ // implicit binding for account
+
+    // bind account to \Wzulfikar\EloquentSimpleLedger\Account
+    $router->model('account', \App\Models\BalanceAccount::class);
+
+    Route::get('', function($account){
+        $stats = \App\Models\LedgerHelper::accountStats($account);
+
+        if(Request::ajax()){
+            return $stats;
+        }
+
+        view()->addLocation(__DIR__ . '/views');
+        $organiser = \App\Models\Organiser::where(1); // super jankey, need a better way to pass this at some point if we want to have more orgs
+        //$router->model('organiser', \App\Models\Organiser::class);
+        return view('BalanceAccounting.index', compact('account', 'stats', 'organiser'));
+    });
+
+    Route::post('', function($account){
+        $transaction = \App\Models\LedgerHelper::record(Request::all(), $account);
+
+        if(isset($transaction['error']))
+            return $transaction;
+
+        return \App\Models\LedgerHelper::accountStats($account);
+    });
+
+    Route::get('summary', function($account){
+        return \App\Models\LedgerHelper::summary($account);
+    });
+
+    Route::get('transactions', function($account){
+        return \App\Models\LedgerHelper::transactions($account);
+    });
+
+    Route::get('accountStats', function($account){
+        return \App\Models\LedgerHelper::accountStats($account);
+    });
+});
+
+*/

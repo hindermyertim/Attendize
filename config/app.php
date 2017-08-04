@@ -172,7 +172,7 @@ return [
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         igaster\laravelTheme\themeServiceProvider::class,
         Spatie\Newsletter\NewsletterServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -237,5 +237,6 @@ return [
         'Omnipay'      => Omnipay\Omnipay::class,
         'Theme' => igaster\laravelTheme\Facades\Theme::class,
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 ];

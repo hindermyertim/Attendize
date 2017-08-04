@@ -40,7 +40,7 @@ class FrontFaceController extends Controller
         $events = Event::where('start_date', '>', $currentTime)
             ->defaultOrganizer()
             ->isLive()
-            ->orderBy('start_date', 'desc')
+            ->orderBy('start_date', 'asc')
             ->get();
 
         if(count($events)) {

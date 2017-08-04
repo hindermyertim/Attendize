@@ -27,6 +27,8 @@ class AddFacebookeventPageToEvents extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('events', function (Blueprint $table) {
+            $table->dropColumn('facebook_event_url');
+        });
     }
 }

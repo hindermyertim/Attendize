@@ -15,6 +15,12 @@
                     <span class="text">Events</span>
                 </a>
             </li>
+            <li class="{{ Request::is('*ledger*') ? 'active' : '' }}">
+                <a href="{{route('showFullTransactions', array('organiser_id' => $organiser->id))}}">
+                    <span class="figure"><i class="ico-money"></i></span>
+                    <span class="text">Ledger</span>
+                </a>
+            </li>
 
             <li class="{{ Request::is('*customize*') ? 'active' : '' }}">
                 <a href="{{route('showOrganiserCustomize', array('organiser_id' => $organiser->id))}}">

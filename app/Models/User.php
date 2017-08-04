@@ -155,4 +155,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             $user->api_token = str_random(60);
         });
     }
+
+    public function balanceAccounts(){
+        return $this->hasMany('\App\Models\BalanceAccount');
+    }
+    public function balanceSheets(){
+        return $this->hasMany('\App\Models\BalanceSheet');
+    }
+    public function scopeIsRegistered($query)
+    {
+        return $query->where('is_registered', 1);
+    }
 }
