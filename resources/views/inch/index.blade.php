@@ -175,7 +175,7 @@
                 <br />
                 You can check out the latest events at our <a href="https://www.facebook.com/LEFTRITEPHL/events/" target="_blank">Facebook page </a>.<br />
                 <br />
-                You can check out the latest ReignForest events at the <a href="https://www.facebook.com/ReignForestPhilly/events/" target="_blank">ReignForest Facebook page</a>, which is our drum and base event series.
+                You can check out the latest ReignForest events at the <a href="https://www.facebook.com/ReignForestPhilly/events/" target="_blank">ReignForest Facebook page</a>, which is our drum and bass event series in collaboration with <a href="https://www.facebook.com/DJHAMUSIC" target="_blank">DJ HA</a>.
             </p>
         </div>
         <!-- end left side -->
