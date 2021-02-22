@@ -171,7 +171,11 @@
         <div class="left-side col-lg-6 col-md-6 col-xs-12">
             <h2 class="section-title">events</h2>
             <p class="events-desc">
-                Here are LEFT RITE's current events and events we are involved with.
+                Here are LEFT RITE's current events and events we are involved with. <br />
+                <br />
+                You can check out the latest events at our <a href="https://www.facebook.com/LEFTRITEPHL/events/" target="_blank">Facebook page </a>.<br />
+                <br />
+                You can check out the latest ReignForest events at the <a href="https://www.facebook.com/ReignForestPhilly/events/" target="_blank">ReignForest Facebook page</a>, which is our drum and base event series.
             </p>
         </div>
         <!-- end left side -->
